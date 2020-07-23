@@ -2,6 +2,7 @@ import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import './style.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { removeReserve } from '../../store/modules/reserve/action';
 
 export default function Reservas() {
 
@@ -9,10 +10,7 @@ export default function Reservas() {
 	const dispatch = useDispatch();
 
 	function handleRemove(id){
-		dispatch({
-			type: 'REMOVE_RESERVE',
-			id,
-		})
+		dispatch(removeReserve(id))
 	}
 
 	return (
